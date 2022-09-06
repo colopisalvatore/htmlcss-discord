@@ -129,7 +129,7 @@ nav li, a {
 /* HERO SECTION */
 
 .hero{
-    background-image: url(../img/jumbo.png);
+    background-image: url(../img/index/jumbo.png);
     background-size: cover;
     min-height: 620px;    
 }
@@ -338,3 +338,4 @@ footer li h3{
 }
 
 /* FINE LANDING PAGE */
+
