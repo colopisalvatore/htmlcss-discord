@@ -339,3 +339,36 @@ footer li h3{
 
 /* FINE LANDING PAGE */
 
+.nitro-bg{
+    background: linear-gradient(90deg,#b473f5,#e292aa);
+    overflow: hidden;
+}
+.nitro-flex{
+    display: flex;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding-top: var(--section-spacing);       
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.nitro-logo{
+    display: block;
+    width: 300px;
+}
+.mascott{
+    width: 100%;
+    height: auto;
+}
+.title-text{
+    width: 580px;
+    text-align: left;
+}
+
+.title-text p{
+    margin-top: 48px;
+    color: var(--white);
+    line-height: 28px;
+    font-size: 18px;
+}
