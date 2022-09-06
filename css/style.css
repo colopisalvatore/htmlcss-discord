@@ -5,43 +5,53 @@
     padding: 0;
     box-sizing: border-box;
     }
+    .clearfix::after{
+        content: ;
+        display: table;
+        clear: both;
+    }
     .debug{              /*  Da Eliminare */
     border: 1px solid black;
     min-height: 100px;
     }
     .container{
-        max-width: 1200px;
+        max-width: var(--page-max-width);
         margin: 0 auto;
-    }
+        padding-top: var(--section-spacing);
+    }    
     .grey{
         max-width: 100%;
-        background-color: #f6f6f6;
+        background-color: var(--off-white);
     }
-    body{
+    html{
         font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
-        background-color: white;
+        background-color: var(--white);
     }
 
-/*  PALETTE COLORI
+/*  PALETTE COLORI  */
 
-    --brand: #5865f2;
+   :root{ 
+    --brand: #255ee9;
     --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
     --greyple: #99aab5;
     --dark-not-black: #2c2f33;
     --focus-border: #00b0f4;
     --status-green: #43b581;
-    --text-link: #00b0f4;
+    --text-link: #7983F5;
     --off-white: #f6f6f6;
     --white: #fff;
     --not-quite-black: #23272a;
     --not-quite-black-rgb: 35,39,42;
     --black: #000;
     --ekko-red: #de2761;
+    
     --page-max-width: 1260px;
     --page-max-width-med: 1024px;
     --num-grid-columns: 4;
     --page-gutter: 24px;
-    --section-spacing: 56px; */
+    --header-spacing: 56px;
+    --section-spacing: 120px;
+   }
 
 
 /* HERO SECTION + HEADER*/
@@ -51,12 +61,13 @@
 /* HEADER SECTION */
 
 header{
-    background-color: #255ee9;
+    background-color: var(--brand);    
+    font-weight: bold;    
 }
 footer{
     width: 100%;
     min-height: 100px;
-    background-color: #2c2f33;
+    background-color: var(--dark-not-black);
 }
 .flexbox{
     display: flex;
@@ -72,17 +83,16 @@ header nav ul {
 }
 nav li, a {
     list-style: none;
-    color: white;
-    font-weight: 400;        
+    color: var(--white);    
     text-decoration: none;    
 }
 
-/* HOVER DEL MENU' */
+/* HOVER MENu' */
 
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    }
+}
 .hover-underline-animation:after {
     content: '';
     position: absolute;
@@ -91,7 +101,7 @@ nav li, a {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color:white;
+    background-color: var(--white);
     transform-origin: center;
     transition: transform 0.25s ease-out;
  }    
@@ -99,6 +109,10 @@ nav li, a {
     transform: scaleX(1);
     transform-origin: center;
 }
+
+/* HOVER BUTTON */
+
+
 
 /* HERO SECTION */
 
@@ -108,21 +122,22 @@ nav li, a {
     min-height: 620px;    
 }
 .inner-hero{
-    color: white;
+    color: var(--white);
     text-align: center;
-    max-width: 700px;
-
-}    
+    max-width: 780px;
+    padding-top: var(--header-spacing);
+    padding-bottom: var(--header-spacing);
+} 
 fa-solid{
-    color: #23272a;
+    color: var(--dark-not-black);
 }
 h1{
     font-size: 56px;
     margin-bottom: 40px;
 }
 .inner-hero p{
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 19px;
+    line-height: 32px;
 }
 a{
     vertical-align: baseline;
@@ -133,12 +148,13 @@ a{
 .btn{
     align-items: center;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding-top: 24px;
 }
 .btnSmall{
     display: block;
-    background-color: white;
-    color: #23272a;
+    background-color: var(--white);
+    color: var(--dark-not-black);
     border-radius: 40px;
     font-size: 14px;
     padding: 7px 16px;        
@@ -151,21 +167,20 @@ a{
     padding: 16px 32px;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 24px;
 }
 .btnDark{
-    background-color: #23272a;
-    color: white;
+    background-color: var(--dark-not-black);
+    color: var(--white);
 
 }
 .btnWhite{        
-    background-color: white;
-    color: #23272a;
+    background-color: var(--white);
+    color: var(--dark-not-black);
 
 }
 .btnPurple{
-    background-color: #7983F5;
-    color: white;
+    background-color: var(--text-link);
+    color: var(--white);
     margin-top: 0px;
     margin-bottom: 120px;
 }
@@ -173,7 +188,7 @@ a{
 /* MAIN SECTION */
 
 .flexbox-content{
-    margin: 160px 0;
+    margin-bottom: 160px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -185,7 +200,7 @@ a{
 }
 .text-right{
     max-width: 340px;   
-    color: #23272a;
+    color: var(--dark-not-black);
     font-weight: bold;
 }
 .text-right h2{    
@@ -202,7 +217,7 @@ a{
 }
 .text-left{
     max-width: 340px;   
-    color: #23272a;
+    color: var(--dark-not-black);
     font-weight: bold;
 }
 .text-left h2{    
@@ -219,16 +234,18 @@ a{
 }
 .reverse{
     flex-direction: row-reverse;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
 }
 .flexbox-center{
     display: flex;
     flex-direction: column;
 }
 .text-center{
-    max-width: 1000px;
+    max-width: 1024px;
     margin: 0 auto;
     text-align: center;
-    color: #23272a;
+    color: var(--dark-not-black);
 }
 .text-center h2{
     font-size: 46px;
@@ -237,6 +254,10 @@ a{
 .text-center p{
     font-size: 20px;
 }
+
+.text-center a{
+    margin-bottom: 100px;
+}
 #star{
     width: 400px;
 }
@@ -244,11 +265,16 @@ h3{
     font-size: 25px;
     padding-bottom: 50px;    
 }
-.text-center a{
-    margin-bottom: 100px;
+.wave{
+    color: var(--off-white);
+
 }
-
-
+.trasform{
+    transform: rotate(180deg);
+}
+svg{
+    display: block;
+}
 
 
 
@@ -257,23 +283,20 @@ ul{
     list-style: none;
 }
 hr{
-    width: 80%;
     margin: 20px auto;   
-    border: 1px solid #7983F5 ;
-    background-color: #7983F5;
+    border: 1px solid var(--text-link) ;
+    background-color: var(--text-link);
 }
 .footer-container{
+    max-width: var(--page-max-width);
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;    
+    justify-content: space-between;
     align-items: flex-start;
-    width: 80%;
     margin: 0 auto;
     padding-top: 50px;
 }
 .footer-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding-top: 0px;
 }
 footer li img{
@@ -284,9 +307,9 @@ footer li{
     padding: 5px 0;
 }
 footer li h4{
-    color: #7983F5;
+    color: var(--text-link);
 }
 footer li h3{
-    color: #7983F5;
+    color: var(--text-link);
     padding-bottom: 10px;
 }
