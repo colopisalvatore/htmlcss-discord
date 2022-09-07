@@ -165,6 +165,14 @@ a{
     justify-content: space-evenly;
     padding-top: 24px;
 }
+.btnLittle{
+    background-color: var(--brand);
+    border-radius: 24px;
+    padding: 0 8px;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 24px;
+}
 .btnSmall{
     display: block;
     border-radius: 40px;
@@ -346,8 +354,7 @@ footer li h3{
 .nitro-flex{
     display: flex;
     max-width: var(--page-max-width);
-    margin: 0 auto;
-    padding-top: var(--section-spacing);       
+    margin: 0 auto;      
     flex-direction: row;
     justify-content: space-around;
 }
@@ -364,6 +371,7 @@ footer li h3{
 .title-text{
     width: 580px;
     text-align: left;
+    align-self: center;
 }
 
 .title-text p{
@@ -371,4 +379,10 @@ footer li h3{
     color: var(--white);
     line-height: 28px;
     font-size: 18px;
+}
+.btn-box{
+    width: 620px;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 40px;
 }
